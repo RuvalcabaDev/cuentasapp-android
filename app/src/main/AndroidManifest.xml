@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cuentasapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +13,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CuentasApp">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <activity
+            android:name=".template.LoginSignupCategory.Style2.LoginSignupStyle2Activity"
+            android:theme="@style/LoginSignUp2Theme" />
+        <activity
+            android:name=".template.LoginSignupCategory.Style12.LoginSignupStyle12Activity"
+            android:theme="@style/LoginSignUp12Theme" />
+        <activity
+            android:name=".template.MenuCategory.Style10.MenuNavigation10Activity"
+            android:theme="@style/MenuNavigation10Theme" />
+        <activity
+            android:name=".template.ProfileCategory.Style5.ProfileStyle5Activity"
+            android:label="@string/title_activity_profile_style5"
+            android:theme="@style/Profile5Theme" />
+
     </application>
 
 </manifest>
